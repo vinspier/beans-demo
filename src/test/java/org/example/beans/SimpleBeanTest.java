@@ -1,5 +1,6 @@
 package org.example.beans;
 
+import org.example.beans.model.SimpleBean;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -18,7 +19,7 @@ public class SimpleBeanTest {
 
     @Test
     public void testClassPathResource(){
-        ClassPathResource classPathResource = new ClassPathResource("application-beans.xml");
+        ClassPathResource classPathResource = new ClassPathResource("application-beans-pre.xml");
         log.info(classPathResource.getPath());
         try {
             InputStream inputStream = classPathResource.getInputStream();
@@ -29,7 +30,7 @@ public class SimpleBeanTest {
 
     @Test
     public void testFileSystemResource(){
-        FileSystemResource fileSystemResource = new FileSystemResource("application-beans.xml");
+        FileSystemResource fileSystemResource = new FileSystemResource("application-beans-pre.xml");
         log.info(fileSystemResource.getPath());
         try {
             InputStream inputStream = fileSystemResource.getInputStream();
@@ -40,7 +41,7 @@ public class SimpleBeanTest {
 
     @Test
     public void getBean(){
-        ClassPathResource classPathResource = new ClassPathResource("application-beans.xml");
+        ClassPathResource classPathResource = new ClassPathResource("application-beans-pre.xml");
         InputSource inputSource = null;
         try {
             inputSource = new InputSource(classPathResource.getInputStream());

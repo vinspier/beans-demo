@@ -30,6 +30,12 @@
             <artifactId>spring-beans</artifactId>
             <version>5.2.7.RELEASE</version>
         </dependency>
+        <!-- tx事务依赖 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>5.2.7.RELEASE</version>
+        </dependency>
         <!-- test依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>

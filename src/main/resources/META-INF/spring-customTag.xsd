@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.vinspier.example/schema/customUser"
+        xmlns:tns="http://www.vinspier.example/schema/customUser" elementFormDefault="qualified">
+
+    <!-- 自定义描述组件内容 targetNamespace是命名空间 -->
+    <element name="customUser">
+        <complexType>
+            <attribute name="id" type="int"/>
+            <attribute name="name" type="string"/>
+            <attribute name="email" type="string"/>
+        </complexType>
+    </element>
+
+</schema>

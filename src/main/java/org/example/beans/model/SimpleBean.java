@@ -1,4 +1,4 @@
-package org.example.beans;
+package org.example.beans.model;
 
 import java.io.Serializable;
 
@@ -12,6 +12,11 @@ public class SimpleBean implements Serializable {
     private String name;
 
     private int age;
+
+    public SimpleBean(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public String getName() {
         return name;
@@ -27,6 +32,14 @@ public class SimpleBean implements Serializable {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public void init(){
+        System.out.println("init model SimpleBean");
+    }
+
+    public void destroy(){
+        System.out.println("destroy model SimpleBean");
     }
 
     @Override

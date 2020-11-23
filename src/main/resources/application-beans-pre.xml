@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:customUser="http://www.vinspier.example/schema/customUser"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/tx
+ 		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.vinspier.example/schema/customUser
+		http://www.vinspier.example/schema/customUser/customUser.xsd" profile="pre">
+
+	<!-- pre environment -->
+	<!-- controller -->
+	<bean id="orderController" class="org.example.beans.controller.OrderController">
+		<property name="orderService" ref="orderService"/>
+	</bean>
+
+	<!-- service -->
+	<bean id="orderService" class="org.example.beans.service.impl.OrderServiceImpl">
+
+	</bean>
+
+	<!-- dao -->
+
+	<!-- other bean -->
+	<bean id="simpleBean" class="org.example.beans.model.SimpleBean">
+		<description>a simple bean for an example</description>
+		<!-- 元数据信息 不会在bean实例体现 -->
+		<meta key="fxb" value="test"/>
+		<qualifier />
+		<constructor-arg index="0">
+			<value>fxb</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>123</value>
+		</constructor-arg>
+	</bean>
+
+	<alias name="simpleBean" alias="simpleBean1"/>
+	<alias name="simpleBean" alias="simpleBean2"/>
+
+	<!-- 自定义标签 -->
+	<customUser:customUser id="1" name="test" email="test@123.com"/>
+
+	<!-- 为JDBC、Hibernate、JDO、JPA等提供的一致的声明式和编程式事务管理 -->
+	<tx:annotation-driven/>
+</beans>
