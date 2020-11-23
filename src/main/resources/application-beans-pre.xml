@@ -2,13 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xmlns:tx="http://www.springframework.org/schema/tx"
-	   xmlns:customUser="http://www.vinspier.example/schema/customUser"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans
 	    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 		http://www.springframework.org/schema/tx
- 		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
-		http://www.vinspier.example/schema/customUser
-		http://www.vinspier.example/schema/customUser/customUser.xsd" profile="pre">
+ 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
 	<!-- pre environment -->
 	<!-- controller -->
@@ -40,9 +37,6 @@
 	<alias name="simpleBean" alias="simpleBean1"/>
 	<alias name="simpleBean" alias="simpleBean2"/>
 
-	<!-- 自定义标签 -->
-	<customUser:customUser id="1" name="test" email="test@123.com"/>
-
 	<!-- 为JDBC、Hibernate、JDO、JPA等提供的一致的声明式和编程式事务管理 -->
-	<tx:annotation-driven/>
+<!--	<tx:annotation-driven/>-->
 </beans>

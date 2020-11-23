@@ -5,6 +5,6 @@
 	    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
 	<!-- 文件分模块 -->
-	<import resource="application-beans-pre.xml"/>
+	<import resource="classpath*:application-beans-pre.xml"/>
 
 </beans>

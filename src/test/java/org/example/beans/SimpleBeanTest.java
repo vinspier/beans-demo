@@ -41,15 +41,7 @@ public class SimpleBeanTest {
 
     @Test
     public void getBean(){
-        ClassPathResource classPathResource = new ClassPathResource("application-beans-pre.xml");
-        InputSource inputSource = null;
-        try {
-            inputSource = new InputSource(classPathResource.getInputStream());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(inputSource.getPublicId());
-        System.out.println(inputSource.getSystemId());
+        ClassPathResource classPathResource = new ClassPathResource("application-context.xml");
         BeanFactory factory = new XmlBeanFactory(classPathResource);
         SimpleBean simpleBean = (SimpleBean) factory.getBean("simpleBean");
         System.out.println(simpleBean);
