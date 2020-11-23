@@ -45,6 +45,9 @@ public class SimpleBeanTest {
         BeanFactory factory = new XmlBeanFactory(classPathResource);
         SimpleBean simpleBean = (SimpleBean) factory.getBean("simpleBean");
         System.out.println(simpleBean);
+        SimpleBean simpleBean1 = (SimpleBean) factory.getBean("simpleBean1");
+        /** 判断默认单例模式 */
+        System.out.println(simpleBean == simpleBean1);
     }
 
 }
